@@ -11,8 +11,14 @@
         <div class="col-md-12">
 
             <form action="{{ route('credits.update', $credit->id) }}" method="POST">
+
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                <div class="form-group">
+                    <label for="client">Client</label>
+                    <p class="form-control-static"><a href="{{route('clients.show', $credit->client->id)}}">{{$credit->client->name}}</a></p>
+                </div>
 
                 <div class="form-group">
                     <label for="nome">ID</label>
