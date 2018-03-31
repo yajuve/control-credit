@@ -17,6 +17,8 @@ class CreditController extends Controller {
 	public function index()
 	{
 		$credits = Credit::all();
+        $credits = Credit::with(array('client'))->get();
+
 
 		return view('admin.credits.index', compact('credits'));
 	}

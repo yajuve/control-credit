@@ -8,11 +8,13 @@
 
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped">
+            <table class="table table-striped" id="myTable">
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Client</th>
                         <th>AMOUNT</th>
+                        <th>Is Paid</th>
                         <th class="text-right">OPTIONS</th>
                     </tr>
                 </thead>
@@ -22,7 +24,9 @@
                 @foreach($credits as $credit)
                 <tr>
                     <td>{{$credit->id}}</td>
+                    <td>{{$credit->client->name}}</td>
                     <td>{{$credit->amount}}</td>
+                    <td>@if($credit->isPaid == 1) <i class="text-success fa fa-fw fa-check-circle"></i> @else <i class="text-danger fa fa-fw fa-times-circle"></i> @endif</td>
 
                     <td class="text-right">
                         <a class="btn btn-primary" href="{{ route('credits.show', $credit->id) }}">View</a>
