@@ -11,12 +11,21 @@
 
             <form action="#">
                 <div class="form-group">
+                    <label for="client">Client</label>
+                    <p class="form-control-static"><a href="{{route('clients.show', $credit->client->id)}}">{{$credit->client->name}}</a></p>
+                </div>
+                <div class="form-group">
                     <label for="nome">ID</label>
                     <p class="form-control-static">{{$credit->id}}</p>
                 </div>
                 <div class="form-group">
                      <label for="amount">AMOUNT</label>
-                     <p class="form-control-static">{{$credit->amount}}</p>
+                     <p class="form-control-static">
+                         @if($credit->isPaid == 1)
+                         <i class="text-success fa fa-fw fa-check-circle"></i>
+                         @else <i class="text-danger fa fa-fw fa-times-circle"></i>
+                         @endif {{$credit->amount}}
+                     </p>
                 </div>
             </form>
 

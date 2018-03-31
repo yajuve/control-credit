@@ -61,7 +61,6 @@ class CreditController extends Controller {
 	public function show($id)
 	{
 		$credit = Credit::findOrFail($id);
-
 		return view('admin.credits.show', compact('credit'));
 	}
 

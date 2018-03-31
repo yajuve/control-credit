@@ -26,7 +26,7 @@
 
                 <div class="checkbox">
                     <label>
-                      <input type="checkbox" name="isPaid" @if(\App\Libs\ValueHelper::getOldInput($credit,'isPaid') == 1) {{ 'checked' }} @endif> Is Paid
+                      <input type="checkbox" name="isPaid" value="true" @if(\App\Libs\ValueHelper::getOldInput($credit,'isPaid') == 1) {{ 'checked' }} @endif> Is Paid
                       {!! \App\Libs\ErrorDisplay::getInstance()->displayIndividual($errors, "isPaid") !!}
                     </label>
                   </div>
