@@ -19,6 +19,7 @@ class CreateCreditsTable extends Migration {
             $table->boolean('isPaid')->default(0)->nullable();
             $table->integer('client_id')->unsigned();
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+            $table->text('note');
 			$table->timestamps();
 		});
 	}

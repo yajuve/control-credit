@@ -45,6 +45,7 @@ class CreditController extends Controller {
 		$credit->amount = $request->input("amount");
         $credit->isPaid = ($request->input("isPaid") == 'true') ? 1 : 0;
         $credit->client_id = $request->input("client_id");
+        $credit->note = $request->input("note");
 
 		$credit->save();
 
@@ -90,6 +91,7 @@ class CreditController extends Controller {
 
 		$credit->amount = $request->input("amount");
         $credit->isPaid = ($request->input("isPaid") == 'true') ? 1 : 0;
+        $credit->note = $request->input("note");
 
 		if($credit->save()){
             return redirect()->route('credits.index')->with('success', 'Item updated successfully.');

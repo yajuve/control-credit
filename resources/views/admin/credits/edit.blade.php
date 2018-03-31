@@ -31,6 +31,11 @@
                     </label>
                   </div>
 
+                  <div class="form-group">
+                    <label for="note">NOTE</label>
+                    <textarea name="note" class="form-control">{{ Session::getOldInput('note') }}</textarea>
+               </div>
+
 
 
             <a class="btn btn-default" href="{{ route('credits.index') }}">Back</a>

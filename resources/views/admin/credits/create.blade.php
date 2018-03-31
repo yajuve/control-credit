@@ -37,6 +37,11 @@
                     </label>
                   </div>
 
+                  <div class="form-group">
+                      <label for="note">NOTE</label>
+                      <textarea name="note" class="form-control">{{ Session::getOldInput('note') }}</textarea>
+                 </div>
+
 
 
 
