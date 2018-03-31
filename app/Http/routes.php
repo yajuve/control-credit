@@ -23,46 +23,8 @@
 //});
 
 Route::resource('clients', '\App\Http\Controllers\Admin\ClientController');
+Route::resource('credits', '\App\Http\Controllers\Admin\CreditController');
 
 Route::get('/', 'WelcomeController@index');
 
-//Route::get('home', 'HomeController@index');
-//
-//Route::controllers([
-//	'auth' => 'Auth\AuthController',
-//	'password' => 'Auth\PasswordController',
-//]);
-//
-//
-//Route::get('/test', 'HomeController@test');
-
-Route::get('/list', [
-    'as' => 'listLink',
-    'uses' => 'LinkController@listLink'
-]);
-
-Route::get('/show/{id}', [
-    'as' => 'showLink',
-    'uses' => 'LinkController@showLink'
-]);
-
-Route::get('/add', [
-    'as' => 'addLink',
-    'uses' => 'LinkController@addLink'
-]);
-
-Route::post('/valid', [
-    'as' => 'validLink',
-    'uses' => 'LinkController@validLink'
-]);
-
-Route::get('/json', [
-    'as' => 'json',
-    'uses' => 'LinkController@allJson'
-]);
-
-Route::get('/jsonp', [
-    'as' => 'jsonp',
-    'uses' => 'LinkController@allJsonP'
-]);
 

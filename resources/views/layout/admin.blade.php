@@ -72,7 +72,7 @@
                         <a href="{{ route('clients.index') }}"><i class="fa fa-fw fa-users"></i>Clients</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-money "></i>Credit</a>
+                        <a href="{{ route('credits.index') }}"><i class="fa fa-fw fa-money "></i>Credit</a>
                     </li>
                 </ul>
             </div>
