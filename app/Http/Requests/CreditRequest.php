@@ -25,6 +25,7 @@ class CreditRequest extends Request
     {
         return [
             "amount" => "required",
+            "client_id" => "required",
         ];
     }
 }

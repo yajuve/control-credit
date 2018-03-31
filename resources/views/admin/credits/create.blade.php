@@ -19,10 +19,27 @@
                      {!! \App\Libs\ErrorDisplay::getInstance()->displayIndividual($errors, "amount") !!}
                 </div>
 
+                 <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="isPaid"  value="true"> Is Paid
+                      {!! \App\Libs\ErrorDisplay::getInstance()->displayIndividual($errors, "isPaid") !!}
+                    </label>
+                  </div>
 
+
+
+                  <div class="form-group">
+                       <label for="ispaid">Client</label>
+                      <select class="form-control" name="client_id">
+                      <option></option>
+                      @foreach($clients as $client)
+                          <option value="{{ $client->id }}">{{ $client->name  }}</option>
+                      @endforeach
+                        </select>
+                  </div>
 
             <a class="btn btn-default" href="{{ route('credits.index') }}">Back</a>
-            <button class="btn btn-primary" type="submit" >Create</a>
+            <button class="btn btn-primary" type="submit" >Create</button>
             </form>
         </div>
     </div>

@@ -26,7 +26,6 @@ class ClientRequest extends Request
         return [
             "name" => "required",
             "phone" => "required",
-            "note" => "required",
         ];
     }
 }

@@ -24,6 +24,13 @@
                      {!! \App\Libs\ErrorDisplay::getInstance()->displayIndividual($errors, "amount") !!}
                 </div>
 
+                <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="isPaid" @if(\App\Libs\ValueHelper::getOldInput($credit,'isPaid') == 1) {{ 'checked' }} @endif> Is Paid
+                      {!! \App\Libs\ErrorDisplay::getInstance()->displayIndividual($errors, "isPaid") !!}
+                    </label>
+                  </div>
+
 
 
             <a class="btn btn-default" href="{{ route('credits.index') }}">Back</a>

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Admin;
 
+use App\Client;
 use App\Http\Requests\CreditRequest;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +28,8 @@ class CreditController extends Controller {
 	 */
 	public function create()
 	{
-		return view('admin.credits.create');
+        $clients = Client::all();
+		return view('admin.credits.create', compact('clients'));
 	}
 
 	/**
@@ -41,6 +43,8 @@ class CreditController extends Controller {
 		$credit = new Credit();
 
 		$credit->amount = $request->input("amount");
+        $credit->isPaid = ($request->input("isPaid") == 'true') ? 1 : 0;
+        $credit->client_id = $request->input("client_id");
 
 		$credit->save();
 
@@ -85,6 +89,7 @@ class CreditController extends Controller {
 		$credit = Credit::findOrFail($id);
 
 		$credit->amount = $request->input("amount");
+        $credit->isPaid = ($request->input("isPaid") == 'true') ? 1 : 0;
 
 		$credit->save();
 
