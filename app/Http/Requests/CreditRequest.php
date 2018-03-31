@@ -23,9 +23,17 @@ class CreditRequest extends Request
      */
     public function rules()
     {
+        // check if the method is POST (create)
+        if ($this->isMethod('POST')) {
+            return [
+                "amount" => "required",
+                "client_id" => "required",
+            ];
+        }
+
         return [
             "amount" => "required",
-            "client_id" => "required",
         ];
+
     }
 }

@@ -16,9 +16,7 @@ class CreditController extends Controller {
 	 */
 	public function index()
 	{
-		$credits = Credit::all();
         $credits = Credit::with(array('client'))->get();
-
 
 		return view('admin.credits.index', compact('credits'));
 	}
@@ -50,7 +48,7 @@ class CreditController extends Controller {
 
 		$credit->save();
 
-		return redirect()->route('credits.index')->with('message', 'Item created successfully.');
+		return redirect()->route('credits.index')->with('success', 'Item created successfully.');
 	}
 
 	/**
@@ -93,9 +91,13 @@ class CreditController extends Controller {
 		$credit->amount = $request->input("amount");
         $credit->isPaid = ($request->input("isPaid") == 'true') ? 1 : 0;
 
-		$credit->save();
+		if($credit->save()){
+            return redirect()->route('credits.index')->with('success', 'Item updated successfully.');
+        }else{
+            return redirect()->route('credits.edit', $id)->with('error', 'Item doesn\'t updated.');
+        }
 
-		return redirect()->route('credits.index')->with('message', 'Item updated successfully.');
+
 	}
 
 	/**

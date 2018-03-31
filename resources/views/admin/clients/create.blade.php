@@ -16,7 +16,7 @@
                    <div class="form-group">
                         <label for="name">NAME</label>
                         <input type="text" name="name" class="form-control" value="{{  Session::getOldInput('name') }}"/>
-
+                        {!! \App\Libs\ErrorDisplay::getInstance()->displayIndividual($errors, "name") !!}
                    </div>
                        <div class="form-group">
                         <label for="phone">PHONE</label>
