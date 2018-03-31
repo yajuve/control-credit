@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
-    <title>LARAVEL 5 ADMIN</title>
+    <meta name="author" content="KMR">
+    <meta name="email" content="yajuve.25.dz@gmail.com">
+    <title>Control My Credit</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('admins/css/bootstrap.min.css') }}" rel="stylesheet">
