@@ -42,7 +42,7 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -51,8 +51,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Laravel 5 Admin</a>
+                <a class="navbar-brand" href="#">Control My Credit</a>
             </div>
+
+
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
@@ -66,14 +68,16 @@
                     </ul>
                 </li>
             </ul>
+
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="{{ route('clients.index') }}"><i class="fa fa-fw fa-users"></i>Clients</a>
+                        <a href="{{ route('clients.index') }}"><i class="fa fa-fw fa-users"></i> Clients</a>
                     </li>
                     <li>
-                        <a href="{{ route('credits.index') }}"><i class="fa fa-fw fa-money "></i>Credit</a>
+                        <a href="{{ route('credits.index') }}"><i class="fa fa-fw fa-money "></i> Credit</a>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
