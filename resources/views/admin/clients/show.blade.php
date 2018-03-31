@@ -6,18 +6,28 @@
     </div>
 
 
+     <!-- Icon Cards-->
+     <h2>{{$client->name}}</h2>
+      <div class="row">
+        <div class="col-xl-3 col-sm-6 mb-3">
+         <div class="alert alert-success" role="alert">
+         <h2 class="text-center">{{ $countPaid }}</h2>
+         <p class="text-center">Paid</p>
+         </div>
+        </div>
+       <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="alert alert-danger" role="alert">
+        <h2 class="text-center">{{ $countNotPaid }}</h2>
+        <p class="text-center">Not Paid</p>
+        </div>
+       </div>
+      </div>
+
+
     <div class="row">
         <div class="col-md-12">
 
             <form action="#">
-                <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static">{{$client->id}}</p>
-                </div>
-                <div class="form-group">
-                     <label for="name">NAME</label>
-                     <p class="form-control-static">{{$client->name}}</p>
-                </div>
                     <div class="form-group">
                      <label for="phone">PHONE</label>
                      <p class="form-control-static">{{$client->phone}}</p>
@@ -26,9 +36,6 @@
                      <label for="note">NOTE</label>
                      <p class="form-control-static">{{$client->note}}</p>
                 </div>
-            </form>
-
-
 
             <a class="btn btn-default" href="{{ route('clients.index') }}">Back</a>
             <a class="btn btn-warning" href="{{ route('clients.edit', $client->id) }}">Edit</a>
