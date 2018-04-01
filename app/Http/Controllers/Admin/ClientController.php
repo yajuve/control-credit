@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Client;
 use App\Credit;
+use App\Model\ClientReport;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller {
@@ -59,17 +60,21 @@ class ClientController extends Controller {
 	public function show($id)
 	{
 		$client = Client::findOrFail($id);
-        $countPaid = 0;
-        $countNotPaid = 0;
+        $report = new ClientReport();
+
         foreach($client->credits as $credit){
-            if($credit->isPaid)
-                $countPaid += $credit->amount;
-            else
-                $countNotPaid += $credit->amount;
+            if($credit->isPaid){ // Paid
+                $report->countPaid += $credit->amount;
+                $report->nbrPaid++;
+            }
+            else{ // Not paid
+                $report->countNotPaid += $credit->amount;
+                $report->nbrNotPaid++;
+            }
         }
 
 
-		return view('admin.clients.show', compact('client', 'countPaid', 'countNotPaid'));
+		return view('admin.clients.show', compact('client', 'report'));
 	}
 
 	/**

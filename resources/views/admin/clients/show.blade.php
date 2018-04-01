@@ -11,13 +11,13 @@
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
          <div class="alert alert-success" role="alert">
-         <h2 class="text-center">{{ $countPaid }}</h2>
+         <h2 class="text-center">{{ $report->countPaid }}</h2>
          <p class="text-center">Paid</p>
          </div>
         </div>
        <div class="col-xl-3 col-sm-6 mb-3">
         <div class="alert alert-danger" role="alert">
-        <h2 class="text-center">{{ $countNotPaid }}</h2>
+        <h2 class="text-center">{{ $report->countNotPaid }}</h2>
         <p class="text-center">Not Paid</p>
         </div>
        </div>
