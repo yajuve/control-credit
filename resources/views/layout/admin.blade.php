@@ -66,7 +66,7 @@
                      <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ url('auth\logout') }}"><i class="fa fa-fw fa-user"></i> Logout</a>
+                            <a href="{{ url('auth\logout') }}"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
                         </li>
                     </ul>
                 </li>
