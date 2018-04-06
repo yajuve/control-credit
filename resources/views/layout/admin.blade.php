@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="KMR">
     <meta name="email" content="yajuve.25.dz@gmail.com">
+    <link rel="icon" type="image/ico" href="{{ asset('favicon.ico') }}"/>
     <title>Control My Credit</title>
 
     <!-- Bootstrap Core CSS -->
