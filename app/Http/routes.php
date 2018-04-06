@@ -22,6 +22,12 @@
 //    Route::resource('cars', '\App\Http\Controllers\Admin\ClientController');
 //});
 
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
+
+
 Route::resource('clients', '\App\Http\Controllers\Admin\ClientController');
 Route::resource('credits', '\App\Http\Controllers\Admin\CreditController');
 
